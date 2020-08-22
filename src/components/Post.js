@@ -1,0 +1,29 @@
+import React from "react"
+import { Link } from "gatsby"
+import { Card, CardTitle, CardText, CardSubtitle, CardBody } from "reactstrap"
+import Img from "gatsby-image"
+
+const Post = ({ title, date, path, body, fluid }) => (
+  <Card>
+    <Link to={path}>
+      <Img className="card-image-top" fluid={fluid}/>
+    </Link>
+    <CardBody>
+      <CardTitle>
+        <Link to={path}>{title}</Link>
+      </CardTitle>
+      <CardSubtitle>
+        <span className="text-info">{date}</span>                                                     
+      </CardSubtitle>
+      <CardText>{body}</CardText>
+      <Link
+        to={path} 
+        className="btn btn-outline-primary float-right"
+      >
+        Read more
+      </Link>
+    </CardBody>
+  </Card>    
+)
+
+export default Post
